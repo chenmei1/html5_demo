@@ -70,6 +70,7 @@ section .center{
 	text-align:center;
 	background:#E6FFCC;
 	font-weight:bold;
+	color:#000000;
 	display:none;
 	border-radius:4px;
 	letter-spacing:10%;
@@ -85,6 +86,7 @@ section .center{
 	background:#E6FFCC;
 	font-weight:bold;
 	display:none;
+	color:#000000;
 	border-radius:4px;
 	letter-spacing:10%;
 }
@@ -94,11 +96,22 @@ section .center{
 	display:none;
 }
 .center .re_text{
-	margin-top:4px;
+	width:100%;
+	margin-top:2px;
+	border:none;
+	font-family:'微软雅黑';
+	color:#000000;
+	border:1px solid #dddddd;
 }
 .center .sub{
-	margin-top:4px;
+	margin-top:3px;
+	float:right;
 	border:none;
+	color:#000000;
+	border-radius:4px;
+	font-family:'微软雅黑';
+	background:none;
+	background:#E6FFCC;
 }
 section button{
 	display:block;
@@ -113,6 +126,7 @@ section button{
 	outline:none;
 }
 </style>
+<script src="js/jquery-1.8.2.min.js"></script>
 <script>
 window.onload = function(){
 	var Btn = document.getElementsByTagName("button");
@@ -146,6 +160,23 @@ window.onload = function(){
 			}
 		}
 	}
+
+	function sub(){
+	alert("a");
+	/*$.ajax({
+		cache: false,
+		type: "POST",
+		url:"ajax.jsp",	//把表单数据发送到ajax.jsp
+		data:$('.forms').serialize(),	//要发送的是ajaxFrm表单中的数据
+		async: false,
+		error: function(request) {
+			alert("发送请求失败！");
+		},
+		success: function(data) {
+			$("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
+		}
+	});*/
+}
 }
 
 function getByClass(oparent,sClass){
@@ -169,9 +200,9 @@ function getByClass(oparent,sClass){
 					我们都在微笑着过每一天，不管什么时候，什么时间，记住微笑的面对每一天1
 				</article>
 				<div class="delete">删除</div><div class="replay">回复</div>
-				<form class="forms" type="post" action="#">
+				<form class="forms" >
 					<input type="text" class="re_text" name="replay"/>
-					<input type="submit" class="sub" value="提交" />
+					<input type="button" class="sub" value="提交" onclick="sub();" />
 				</form>
 			</div>
 			<button class="btn">
